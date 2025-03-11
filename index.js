@@ -159,7 +159,23 @@ app.get('/', async (req, res) => {
         res.status(500).send('Error fetching menu');
     }
 });
-
+app.get('/api/models', (req, res) => {
+  res.json({
+      models: [
+          'Sequelize',
+          'sequelize',
+          'Product',
+          'Customer',
+          'Order',
+          'Promotion',
+          'Payment',
+          'Delivery',
+          'Material',
+          'MaterialProduct',
+          'Employees'
+      ]
+  });
+});
 // เริ่มต้นเซิร์ฟเวอร์
 const port = process.env.PORT || 4000;
 app.listen(port, () => {
